@@ -8,9 +8,7 @@ st.write(
   """Choose the fruits you want in your custom Smoothie!
   """
 )
-import requests  
-smoothiefroot_response = requests.get("[https://my.smoothiefroot.com/api/fruit/watermelon](https://my.smoothiefroot.com/api/fruit/watermelon)")  
-st.text(smoothiefroot_response)
+
 
 cnx = st.connection("snowflake")
 session = cnx.session()
@@ -35,7 +33,9 @@ if ingredient_list:
                     values ('""" + ingredients_string + """','"""+ name_on_order + """')"""
      st.write(ingredient_list) 
      time_to_insert = st.button('Submit Order')
-    
+     import requests  
+     smoothiefroot_response = requests.get("[https://my.smoothiefroot.com/api/fruit/watermelon](https://my.smoothiefroot.com/api/fruit/watermelon)")  
+     st.text(smoothiefroot_response)
 
      if time_to_insert:
          session.sql(my_insert_stmt).collect()
