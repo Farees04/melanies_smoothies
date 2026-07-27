@@ -34,7 +34,7 @@ if ingredient_list:
      st.write(ingredient_list) 
      time_to_insert = st.button('Submit Order')
      import requests  
-     smoothiefroot_response = requests.get("(https://my.smoothiefroot.com/api/fruit/watermelon)")  
+     smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
      st.text(smoothiefroot_response)
 
      if time_to_insert:
