@@ -8,6 +8,9 @@ st.write(
   """Choose the fruits you want in your custom Smoothie!
   """
 )
+import requests  
+smoothiefroot_response = requests.get("[https://my.smoothiefroot.com/api/fruit/watermelon](https://my.smoothiefroot.com/api/fruit/watermelon)")  
+st.text(smoothiefroot_response)
 
 cnx = st.connection("snowflake")
 session = cnx.session()
